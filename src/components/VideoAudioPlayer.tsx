@@ -91,10 +91,10 @@ const AudioPlayer = () => {
               sx={{
                 margin: "16px",
                 width: "100%",
-                alignItems: "center",
-                minHeight: "300px",
                 display: "flex",
                 flexDirection: "column",
+                justifyContent: "space-between",
+                minHeight: "400px", // Adjust the height as needed
               }}
             >
               <CardMedia
@@ -104,22 +104,22 @@ const AudioPlayer = () => {
                 alt={audio.Image}
               />
 
-              <ReactPlayer
-                url={`https://arthurfrost.qflo.co.za/${audio.Audio}`}
-                controls
-                width="100%"
-                height="140px"
-              />
-
               <CardContent
                 sx={{
-                  flex: "1",
+                  p: "1rem",
                   display: "flex",
                   flexDirection: "column",
-                  justifyContent: "space-between",
+                  gap: "1rem",
                 }}
               >
                 <Typography variant="h6">{audio.Title}</Typography>
+                <ReactPlayer
+                url={`https://arthurfrost.qflo.co.za/${audio.Audio}`}
+                controls
+                width="100%"
+                height="40px" // Set a height for the player
+                style={{ marginTop: "auto" }} // Push the player to the bottom
+              />
 
               </CardContent>
             </Card>
