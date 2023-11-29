@@ -53,4 +53,19 @@
       height: auto;
     }
   }
+
+
+
+@media (max-width: 600px) {
+    .hero {
+      height: auto;
+      background-size: cover;
+    }
+  
+    .hero .hero-text {
+      height: auto;
+      padding: 0.5rem;
+    }
+  }
+  
   

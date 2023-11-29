@@ -94,7 +94,10 @@ const AudioPlayer = () => {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
-                minHeight: "400px", // Adjust the height as needed
+                minHeight: "300px", 
+                '@media (max-width:600px)': {
+                  minHeight: "500px", 
+                },
               }}
             >
               <CardMedia
@@ -117,8 +120,8 @@ const AudioPlayer = () => {
                 url={`https://arthurfrost.qflo.co.za/${audio.Audio}`}
                 controls
                 width="100%"
-                height="40px" // Set a height for the player
-                style={{ marginTop: "auto" }} // Push the player to the bottom
+                height="40px" 
+                style={{ marginTop: "auto" }} 
               />
 
               </CardContent>
