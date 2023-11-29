@@ -4,6 +4,7 @@ import VideoAudioService from "../services/video-audio-service";
 import { useQuery } from "react-query";
 import ReactPlayer from 'react-player';
 import toast from 'react-hot-toast';
+import Hero from "./Hero"; 
 
 interface Audio {
   Id: number;
@@ -28,6 +29,7 @@ interface Audio {
 
 const AudioPlayer = () => {
   const [currentPage, setCurrentPage] = useState(1);
+  const [filteredAudioData, setFilteredAudioData] = useState<Audio[]>([]);
 
   const fetchAudioData = async (page: number) => {
     try {
@@ -67,14 +69,37 @@ const AudioPlayer = () => {
     return null;
   }
 
+  const handleSearch = (query: string) => {
+    const filteredData = audioData?.filter((audio) =>
+      audio.Title.toLowerCase().includes(query.toLowerCase())
+    );
+    setFilteredAudioData(filteredData || []);
+  };
+
   return (
     <Box>
+       <Hero onSearch={handleSearch} />
       <Grid container spacing={2}>
-        {audioData?.slice((currentPage - 1) * 20, currentPage * 20).map((audio: Audio) => (
+      {(filteredAudioData.length > 0 ? filteredAudioData : audioData)?.slice((currentPage - 1) * 20,currentPage * 20
+        ).map((audio: Audio) => (
           <Grid item key={audio.Id} xs={12} sm={6} md={3}>
-            <Card>
+            <Card 
+               variant="outlined"
+               sx={{
+                 margin: "16px",
+                 width: "100%", 
+                 alignItems: "center",
+                 height: "350px",
+               }}>
               <CardMedia component="img" height="140" image={audio.Image} alt={audio.Title} />
-              <CardContent>
+              <CardContent
+                 sx={{
+                  p: "1rem",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "1rem",
+                }}
+              >
                 <Typography variant="h6">{audio.Title}</Typography>
                 <ReactPlayer url={audio.Audio} controls />
               </CardContent>
