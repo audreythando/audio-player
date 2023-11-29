@@ -4,7 +4,7 @@ import VideoAudioService from "../services/video-audio-service";
 import { useQuery } from "react-query";
 import ReactPlayer from 'react-player';
 import toast from 'react-hot-toast';
-import Hero from "./Hero"; 
+import Hero from "./Hero";
 
 interface Audio {
   Id: number;
@@ -50,6 +50,7 @@ const AudioPlayer = () => {
     }
   );
 
+
   const totalPages = audioData?.length ? Math.ceil(audioData.length / 20) : 0;
 
   const handleNextPage = () => {
@@ -78,40 +79,82 @@ const AudioPlayer = () => {
 
   return (
     <Box>
-       <Hero onSearch={handleSearch} />
+      <Hero onSearch={handleSearch} />
       <Grid container spacing={2}>
-      {(filteredAudioData.length > 0 ? filteredAudioData : audioData)?.slice((currentPage - 1) * 20,currentPage * 20
+        {(filteredAudioData.length > 0 ? filteredAudioData : audioData)?.slice(
+          (currentPage - 1) * 20,
+          currentPage * 20
         ).map((audio: Audio) => (
           <Grid item key={audio.Id} xs={12} sm={6} md={3}>
-            <Card 
-               variant="outlined"
-               sx={{
-                 margin: "16px",
-                 width: "100%", 
-                 alignItems: "center",
-                 height: "350px",
-               }}>
-              <CardMedia component="img" height="140" image={audio.Image} alt={audio.Title} />
+            <Card
+              variant="outlined"
+              sx={{
+                margin: "16px",
+                width: "100%",
+                alignItems: "center",
+                minHeight: "300px",
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <CardMedia
+                component="img"
+                height="140"
+                image={`https://arthurfrost.qflo.co.za/${audio.Image}`}
+                alt={audio.Image}
+              />
+
+              <ReactPlayer
+                url={`https://arthurfrost.qflo.co.za/${audio.Audio}`}
+                controls
+                width="100%"
+                height="140px"
+              />
+
               <CardContent
-                 sx={{
-                  p: "1rem",
+                sx={{
+                  flex: "1",
                   display: "flex",
                   flexDirection: "column",
-                  gap: "1rem",
+                  justifyContent: "space-between",
                 }}
               >
                 <Typography variant="h6">{audio.Title}</Typography>
-                <ReactPlayer url={audio.Audio} controls />
+
               </CardContent>
             </Card>
           </Grid>
         ))}
       </Grid>
       <Box mt={2}>
-        <Button variant="contained" onClick={handlePrevPage} disabled={currentPage === 1}>
+        <Button
+          variant="contained"
+          onClick={handlePrevPage}
+          disabled={currentPage === 1}
+          sx={{
+            borderRadius: "50px",
+            backgroundColor: "#66bfbf",
+            margin: "0 8px",
+            "&:hover": {
+              backgroundColor: "#233142",
+            },
+          }}
+        >
           Previous Page
         </Button>
-        <Button variant="contained" onClick={handleNextPage} disabled={currentPage === totalPages}>
+        <Button
+          variant="contained"
+          onClick={handleNextPage}
+          disabled={currentPage === totalPages}
+          sx={{
+            borderRadius: "50px",
+            backgroundColor: "#66bfbf",
+            margin: "0 8px",
+            "&:hover": {
+              backgroundColor: "#233142",
+            },
+          }}
+        >
           Next Page
         </Button>
       </Box>
