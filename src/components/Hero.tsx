@@ -48,6 +48,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onSearch }) => {
             backgroundColor: "white",
             width: "100%",
             maxWidth: "500px",
+            color: "navy",
+            paddingLeft: "10px",
+            paddingRight: "10px",
           }}
         />
         <div className="btn-group">
