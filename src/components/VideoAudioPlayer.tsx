@@ -1,9 +1,18 @@
-import React, { useState } from 'react';
-import { Box, Card, CardContent, CardMedia, Typography, Button, Grid, CircularProgress } from '@mui/material';
+import React, { useState } from "react";
+import {
+  Box,
+  Card,
+  CardContent,
+  CardMedia,
+  Typography,
+  Button,
+  Grid,
+  CircularProgress,
+} from "@mui/material";
 import VideoAudioService from "../services/video-audio-service";
 import { useQuery } from "react-query";
-import ReactPlayer from 'react-player';
-import toast from 'react-hot-toast';
+import ReactPlayer from "react-player";
+import toast from "react-hot-toast";
 import Hero from "./Hero";
 
 interface Audio {
@@ -41,7 +50,11 @@ const AudioPlayer = () => {
     }
   };
 
-  const { data: audioData, isLoading, isError } = useQuery<Audio[]>(
+  const {
+    data: audioData,
+    isLoading,
+    isError,
+  } = useQuery<Audio[]>(
     ["get-audio", currentPage],
     () => fetchAudioData(currentPage),
     {
@@ -49,7 +62,6 @@ const AudioPlayer = () => {
       keepPreviousData: true,
     }
   );
-
 
   const totalPages = audioData?.length ? Math.ceil(audioData.length / 20) : 0;
 
@@ -81,55 +93,55 @@ const AudioPlayer = () => {
     <Box>
       <Hero onSearch={handleSearch} />
       <Grid container spacing={2}>
-        {(filteredAudioData.length > 0 ? filteredAudioData : audioData)?.slice(
-          (currentPage - 1) * 20,
-          currentPage * 20
-        ).map((audio: Audio) => (
-          <Grid item key={audio.Id} xs={12} sm={6} md={3}>
-            <Card
-              variant="outlined"
-              sx={{
-                margin: "16px",
-                width: "100%",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-                minHeight: "300px", 
-                '@media (max-width:600px)': {
-                  minHeight: "500px", 
-                },
-              }}
-            >
-              <CardMedia
-                component="img"
-                height="140"
-                image={`https://arthurfrost.qflo.co.za/${audio.Image}`}
-                alt={audio.Image}
-              />
-
-              <CardContent
+        {(filteredAudioData.length > 0 ? filteredAudioData : audioData)
+          ?.slice((currentPage - 1) * 20, currentPage * 20)
+          .map((audio: Audio) => (
+            <Grid item key={audio.Id} xs={12} sm={6} md={3}>
+              <Card
+                variant="outlined"
                 sx={{
-                  p: "1rem",
+                  margin: "16px",
+                  width: "100%",
                   display: "flex",
                   flexDirection: "column",
-                  gap: "1rem",
+                  justifyContent: "space-between",
+                  minHeight: "300px",
+                  "@media (max-width:600px)": {
+                    minHeight: "500px",
+                  },
                 }}
               >
-                <Typography variant="h6">{audio.Title}</Typography>
-                <ReactPlayer
-                url={`https://arthurfrost.qflo.co.za/${audio.Audio}`}
-                controls
-                width="100%"
-                height="40px" 
-                style={{ marginTop: "auto" }} 
-              />
+                <CardMedia
+                  component="img"
+                  height="140"
+                  image={`https://arthurfrost.qflo.co.za/${audio.Image}`}
+                  alt={audio.Image}
+                />
 
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
+                <CardContent
+                  sx={{
+                    p: "1rem",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "1rem",
+                  }}
+                >
+                  <Typography variant="h6">{audio.Title}</Typography>
+                  <ReactPlayer
+                    url={`https://arthurfrost.qflo.co.za/${audio.Audio}`}
+                    controls
+                    width="100%"
+                    height="40px"
+                    style={{ marginTop: "auto" }}
+                  />
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
       </Grid>
-      <Box mt={2}>
+      <Box
+        style={{ display: "flex", justifyContent: "center", marginTop: "16px" }}
+      >
         <Button
           variant="contained"
           onClick={handlePrevPage}
