@@ -1,6 +1,6 @@
 # Audio Player 🎵
 
-![Audio Player](https://user-images.githubusercontent.com/12345678/123456789-audio-player.jpg)
+![Screenshot (486)](https://github.com/audreythando/audio-player/assets/82891759/127e3124-7f64-40fd-b3ea-706e27ee4fdd)
 
 ## Overview
 The Audio Player application allows users to browse and play audio content. It provides features for searching audio by title and navigating through multiple pages of audio content. This project displays the content of the JSON retrieved via an Ajax call.
@@ -20,6 +20,8 @@ cd audio-player
 yarn install
 yarn start
 ```
+
+![Screenshot (484)](https://github.com/audreythando/audio-player/assets/82891759/03211509-728c-4475-a1ba-3f87cb0d42cc)
 
 ## Usage
 ### Components
@@ -42,22 +44,15 @@ Represents the header section of the application's homepage. Contains a search i
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-![Audio Player Screenshot](https://user-images.githubusercontent.com/12345678/audio-player-screenshot.jpg)
+![Screenshot (480)](https://github.com/audreythando/audio-player/assets/82891759/9fbf95da-cffd-4b87-89da-2ffa90b6e835)
 
----
+![Screenshot (481)](https://github.com/audreythando/audio-player/assets/82891759/b78e8893-869d-44ef-9dbf-f01b3713f041)
 
 Visit the live demo: [audio-player.vercel.app](https://audio-player.vercel.app)
 
 Made with ❤️ by [audreythando](https://github.com/audreythando)
 
 
-![Screenshot (486)](https://github.com/audreythando/audio-player/assets/82891759/127e3124-7f64-40fd-b3ea-706e27ee4fdd)
-
-![Screenshot (484)](https://github.com/audreythando/audio-player/assets/82891759/03211509-728c-4475-a1ba-3f87cb0d42cc)
-
-![Screenshot (480)](https://github.com/audreythando/audio-player/assets/82891759/9fbf95da-cffd-4b87-89da-2ffa90b6e835)
-
-![Screenshot (481)](https://github.com/audreythando/audio-player/assets/82891759/b78e8893-869d-44ef-9dbf-f01b3713f041)
 
 
 
