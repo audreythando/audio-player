@@ -1,9 +1,9 @@
 # Audio Player 🎵
 
-![Screenshot (486)](https://github.com/audreythando/audio-player/assets/82891759/127e3124-7f64-40fd-b3ea-706e27ee4fdd)
-
 ## Overview
 The Audio Player application allows users to browse and play audio content. It provides features for searching audio by title and navigating through multiple pages of audio content. This project displays the content of the JSON retrieved via an Ajax call.
+
+![Screenshot (486)](https://github.com/audreythando/audio-player/assets/82891759/127e3124-7f64-40fd-b3ea-706e27ee4fdd)
 
 ## Table of Contents
 - [Installation](#installation)
