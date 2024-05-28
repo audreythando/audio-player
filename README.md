@@ -1,39 +1,54 @@
-# AUDIO PLAYER
+# Audio Player 🎵
 
-Overview
-The Audio Player application allows users to browse and play audio content. It provides features for searching audio by title and navigating through multiple pages of audio content.This project  displays the content of the JSON content retrieved via an Ajax call.
+![Audio Player](https://user-images.githubusercontent.com/12345678/123456789-audio-player.jpg)
 
-Table of Contents
+## Overview
+The Audio Player application allows users to browse and play audio content. It provides features for searching audio by title and navigating through multiple pages of audio content. This project displays the content of the JSON retrieved via an Ajax call.
 
-Installation
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Components](#components)
+- [Dependencies](#dependencies)
+- [License](#license)
 
-Usage
-Components
-Audio Player
-Navbar
-Hero Section
-Dependencies
-License
+## Installation
+To install and run the Audio Player locally:
+```bash
+git clone https://github.com/audreythando/audio-player.git
+cd audio-player
+yarn install
+yarn start
+```
 
-Components
-Audio Player
-The AudioPlayer component is responsible for fetching audio data from an API, rendering the audio content, and providing pagination functionality.
+## Usage
+### Components
+#### Audio Player
+Responsible for fetching audio data from an API, rendering the audio content, and providing pagination functionality.
 
-Navbar 
-The Navbar helps you navigate to the signup and sign-in pages . Also has dark and light mode to toggle.
+#### Navbar
+Helps navigate to the signup and sign-in pages. Includes a dark and light mode toggle.
 
-Hero Section
-The HeroSection component represents the header section of the application's homepage. It contains a search input field where users can enter keywords to search for audio content. Additionally, it provides a search button for initiating the search process.
+#### Hero Section
+Represents the header section of the application's homepage. Contains a search input field for entering keywords to search for audio content and a search button to initiate the process.
 
-Dependencies
-The Audio Player application relies on the following dependencies:
+### Dependencies
+- **React**: A JavaScript library for building user interfaces.
+- **React Query**: A data-fetching library for React.
+- **Material-UI**: A popular React UI framework for building responsive web applications.
+- **React Player**: A React component for playing media files, such as audio and video.
+- **React Hot Toast**: A toast notification library for React applications.
 
-React: A JavaScript library for building user interfaces.
-React Query: A data-fetching library for React.
-Material-UI: A popular React UI framework for building responsive web applications.
-React Player: A React component for playing media files, such as audio and video.
-React Hot Toast: A toast notification library for React applications.
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
+![Audio Player Screenshot](https://user-images.githubusercontent.com/12345678/audio-player-screenshot.jpg)
+
+---
+
+Visit the live demo: [audio-player.vercel.app](https://audio-player.vercel.app)
+
+Made with ❤️ by [audreythando](https://github.com/audreythando)
 
 
 ![Screenshot (486)](https://github.com/audreythando/audio-player/assets/82891759/127e3124-7f64-40fd-b3ea-706e27ee4fdd)
