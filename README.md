@@ -48,7 +48,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ![Screenshot (481)](https://github.com/audreythando/audio-player/assets/82891759/b78e8893-869d-44ef-9dbf-f01b3713f041)
 
-Visit the live demo: [audio-player.vercel.app](https://audio-player.vercel.app)
+Visit the live demo: https://video-audio-player.vercel.app/
 
 Made with ❤️ by [audreythando](https://github.com/audreythando)
 
